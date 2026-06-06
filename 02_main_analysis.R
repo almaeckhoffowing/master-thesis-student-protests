@@ -85,8 +85,8 @@ table(omg$dem_demand_any)
 # Merge V-Dem into OMG (campaign-level):
 vdem_small <- vdem %>%
   select(country_id, year,
-         v2x_polyarchy, e_gdppc, # main models (H1)
-         v2csreprss, v2x_corr)   # robustness controls (H1)
+         v2x_polyarchy, e_gdppc, 
+         v2csreprss, v2x_corr)   
 
 omg <- omg %>%
   left_join(vdem_small, by = c("country_id", "start_year" = "year"))
